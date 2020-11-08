@@ -33,4 +33,13 @@ describe "When I visit a bachelorette show page" do
     click_link("View Contestants")
     expect(current_path).to eq("/bachelorettes/#{@bachelorette1.id}/contestants")
   end
+
+  it "I see the average age of that bachelorettes contestants" do
+    age_sum = @contestant1.age + @contestant2.age
+    contestant_count = @bachelorette1.contestants.count
+
+    visit "/bachelorettes/#{@bachelorette1.id}"
+    
+    expect(page).to have_content("Average age of Contestants: #{age_sum.to_f / contestant_count}")
+  end
 end
