@@ -28,5 +28,7 @@ describe "When I visit a bachelorette show page" do
     visit "/bachelorettes/#{@bachelorette1.id}"
 
     expect(page).to have_link("View Contestants")
+    click_link("View Contestants")
+    expect(current_path).to eq("/bachelorettes/#{@bachelorette.id}/contestants")
   end
 end
