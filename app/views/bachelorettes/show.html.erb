@@ -1,4 +1,4 @@
 <%= @bachelorette.name %>
-<p>Season <%= @bachelorette.season_number %> - EVEN MORE DRAMA</p>
+<p>Season <%= @bachelorette.season_number %> - <%= @bachelorette.season_description %></p>
 <%= link_to "View Contestants", "/bachelorettes/#{@bachelorette.id}/contestants" %>
 
