@@ -31,6 +31,8 @@ describe 'As a visitor when I visit the contestants index' do
       expect(page).to have_content(@contestant2.age)
       expect(page).to have_content(@contestant2.hometown)
     end
+
+    expect(page).to_not have_selector("#contestant-#{@contestant3.id}")
   end
 end
 
