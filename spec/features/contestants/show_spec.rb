@@ -35,6 +35,6 @@ describe "As a visitor to a contestants show page" do
       click_link("#{@outing2.name}")
     end
 
-    expect(current_path).to eq("/outings/#{@outing1.id}")
+    expect(current_path).to eq("/outings/#{@outing2.id}")
   end
 end
