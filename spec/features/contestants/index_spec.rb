@@ -11,7 +11,7 @@ describe 'As a visitor when I visit the contestants index' do
                                                      hometown: "Scranton")
     @contestant2 = @bachelorette1.contestants.create(name: "Michael Scott",
                                                      age: 30,
-                                                     hometown: "Scranton")
+                                                     hometown: "Smallville")
     @contestant3 = @bachelorette2.contestants.create(name: "Jim Halpert",
                                                      age: 29,
                                                      hometown: "Scranton")
@@ -43,6 +43,14 @@ describe 'As a visitor when I visit the contestants index' do
     end
 
     expect(current_path).to eq("/contestants/#{@contestant2.id}")
+  end
+
+  it "I see a list of all unique hometowns of contestants" do
+    visit "/bachelorettes/#{@bachelorette1.id}/contestants"
+
+    within("#distinct-hometowns") do
+      expect(page).to have_content("These Contestants are from these hometowns: #{@contestant1.hometown}, #{@contestant2.hometown}")
+    end
   end
 end
 
