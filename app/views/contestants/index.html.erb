@@ -1,0 +1,7 @@
+<% @contestants.each do |contestant| %>
+  <section id="contestant-<%= contestant.id %>">
+    <%= contestant.name %>
+    <%= contestant.age %>
+    <%= contestant.hometown %>
+  </section>
+<% end %>
