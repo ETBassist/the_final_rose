@@ -23,4 +23,10 @@ describe "When I visit a bachelorette show page" do
     expect(page).to have_content(@bachelorette1.name)
     expect(page).to have_content("Season #{@bachelorette1.season_number} - EVEN MORE DRAMA")
   end
+
+  it "I see a link to each contestant for that bachelorette" do
+    visit "/bachelorettes/#{@bachelorette1.id}"
+
+    expect(page).to have_link("View Contestants")
+  end
 end
