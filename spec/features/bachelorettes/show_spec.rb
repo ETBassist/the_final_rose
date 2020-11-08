@@ -21,6 +21,6 @@ describe "When I visit a bachelorette show page" do
     visit "/bachelorettes/#{@bachelorette1.id}"
 
     expect(page).to have_content(@bachelorette1.name)
-    expect(page).to have_content("Season #{@bachelorette1.name} - EVEN MORE DRAMA")
+    expect(page).to have_content("Season #{@bachelorette1.season_number} - EVEN MORE DRAMA")
   end
 end
