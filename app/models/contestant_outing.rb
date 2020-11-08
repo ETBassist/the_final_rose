@@ -1,0 +1,2 @@
+class ContestantOuting < ApplicationRecord
+end
