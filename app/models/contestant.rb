@@ -6,4 +6,8 @@ class Contestant <ApplicationRecord
   def self.average_age
     average(:age)
   end
+
+  def self.unique_hometowns
+    select(:hometown).distinct.pluck(:hometown)
+  end
 end
