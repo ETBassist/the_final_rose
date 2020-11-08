@@ -24,4 +24,12 @@ describe 'As a visitor when I go to an outings show page' do
     expect(page).to have_content(@outing1.location)
     expect(page).to have_content(@outing1.date)
   end
+
+  it 'I see a count of contestants on that outing and all their names' do
+    visit "/outings/#{@outing1.id}"
+    
+    expect(page).to have_content("2 Contestants on this Outing:")
+    expect(page).to have_content(@contestant1.name)
+    expect(page).to have_content(@contestant2.name)
+  end
 end
