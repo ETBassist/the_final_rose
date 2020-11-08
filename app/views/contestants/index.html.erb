@@ -5,3 +5,12 @@
     <%= contestant.hometown %>
   </section>
 <% end %>
+
+<section id="distinct-hometowns">
+  <p>
+    These Contestants are from these hometowns: 
+    <% @contestants.unique_hometowns.each do |town| %>
+      <%= "#{town}, " %>
+    <% end %>
+  </p>
+</section>
