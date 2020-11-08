@@ -1,3 +1,10 @@
 <%= @outing.name %>
 <%= @outing.location %>
 <%= @outing.date %>
+
+<p><%= @outing.contestants.count %> Contestants on this Outing:</p>
+<% @outing.contestants.each do |contestant| %>
+  <section id="contestant-<%= contestant.id %>">
+    <%= contestant.name %>
+  </section>
+<% end %>

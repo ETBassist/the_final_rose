@@ -29,7 +29,12 @@ describe 'As a visitor when I go to an outings show page' do
     visit "/outings/#{@outing1.id}"
     
     expect(page).to have_content("2 Contestants on this Outing:")
-    expect(page).to have_content(@contestant1.name)
-    expect(page).to have_content(@contestant2.name)
+    within("#contestant-#{@contestant1.id}") do
+      expect(page).to have_content(@contestant1.name)
+    end
+
+    within("#contestant-#{@contestant2.id}") do
+      expect(page).to have_content(@contestant2.name)
+    end
   end
 end
