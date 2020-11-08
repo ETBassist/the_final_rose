@@ -34,5 +34,15 @@ describe 'As a visitor when I visit the contestants index' do
 
     expect(page).to_not have_selector("#contestant-#{@contestant3.id}")
   end
+
+  it "and I click a contestants name I'm take to their show page" do
+    visit "/bachelorettes/#{@bachelorette1.id}/contestants"
+
+    within("#contestant-#{@contestant2.id}") do
+      click_link("#{@contestant2.name}")
+    end
+
+    expect(current_path).to eq("/contestants/#{@contestant2.id}")
+  end
 end
 
