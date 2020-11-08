@@ -1,6 +1,6 @@
 <% @contestants.each do |contestant| %>
   <section id="contestant-<%= contestant.id %>">
-    <%= contestant.name %>
+    <%= link_to "#{contestant.name}", "/contestants/#{contestant.id}" %>
     <%= contestant.age %>
     <%= contestant.hometown %>
   </section>
