@@ -21,13 +21,13 @@ describe 'As a visitor when I visit the contestants index' do
     visit "/bachelorettes/#{@bachelorette1.id}/contestants"
 
     within("#contestant-#{@contestant1.id}") do
-      expect(page).to have_content(@contestant1.name)
+      expect(page).to have_link("#{@contestant1.name}")
       expect(page).to have_content(@contestant1.age)
       expect(page).to have_content(@contestant1.hometown)
     end
 
     within("#contestant-#{@contestant2.id}") do
-      expect(page).to have_content(@contestant2.name)
+      expect(page).to have_link("#{@contestant2.name}")
       expect(page).to have_content(@contestant2.age)
       expect(page).to have_content(@contestant2.hometown)
     end
